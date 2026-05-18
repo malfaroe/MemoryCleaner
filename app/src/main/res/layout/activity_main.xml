@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Storage Cleaner"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Almacenamiento actual -->
+        <TextView
+            android:id="@+id/tvStorageNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:padding="12dp"
+            android:background="#E3F2FD"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Proxima ejecucion y ultimo resultado -->
+        <TextView
+            android:id="@+id/tvNextRun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/tvLastRun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvLastResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Boton limpieza manual -->
+        <Button
+            android:id="@+id/btnCleanNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limpiar ahora"
+            android:textSize="16sp"
+            android:padding="14dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Seccion de configuracion inicial (una sola vez) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuracion inicial (solo una vez)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSetupNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btnFixBattery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnFixStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>
