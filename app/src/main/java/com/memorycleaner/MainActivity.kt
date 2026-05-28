@@ -63,16 +63,22 @@ class MainActivity : AppCompatActivity() {
             "Usado: ${fmtMb(usedMb)} de ${fmtMb(totalMb)} (${usedPct}%)\nLibre: ${fmtMb(freeMb)}"
 
         // Resultado de la ultima limpieza
-        val lastRun  = prefs.getString("last_run", null)
-        val freedMb  = prefs.getLong("freed_total_mb", 0)
-        val sysMb    = prefs.getLong("freed_system_mb", 0)
-        val staleMb  = prefs.getLong("freed_stale_mb", 0)
+        val lastRun    = prefs.getString("last_run", null)
+        val freedMb    = prefs.getLong("freed_total_mb", 0)
+        val sysMb      = prefs.getLong("freed_system_mb", 0)
+        val extCacheMb = prefs.getLong("freed_ext_cache_mb", 0)
+        val thumbsMb   = prefs.getLong("freed_thumbs_mb", 0)
+        val staleMb    = prefs.getLong("freed_stale_mb", 0)
+        val killedApps = prefs.getInt("killed_apps", 0)
         if (lastRun != null) {
             binding.tvLastRun.text    = "Ultima limpieza: $lastRun"
             binding.tvLastResult.text = buildString {
                 append("Liberados: ${fmtMb(freedMb)}")
-                if (sysMb   > 0) append("\n  Cache del sistema: ${fmtMb(sysMb)}")
-                if (staleMb > 0) append("\n  Archivos viejos en Descargas: ${fmtMb(staleMb)}")
+                if (extCacheMb > 0) append("\n  Cache de apps: ${fmtMb(extCacheMb)}")
+                if (sysMb      > 0) append("\n  Cache del sistema: ${fmtMb(sysMb)}")
+                if (thumbsMb   > 0) append("\n  Miniaturas: ${fmtMb(thumbsMb)}")
+                if (staleMb    > 0) append("\n  Descargas viejas: ${fmtMb(staleMb)}")
+                if (killedApps > 0) append("\n  Procesos detenidos: $killedApps")
             }
         } else {
             binding.tvLastRun.text    = "Aun no se ha ejecutado ninguna limpieza."
